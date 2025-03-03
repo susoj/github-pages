@@ -1,75 +1,86 @@
-<header>
-
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
-
-# GitHub Pages
-
-_Create a site or blog from your GitHub repositories with GitHub Pages._
-
-</header>
-
-<!--
-  <<< Author notes: Course start >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
--->
-
-## Welcome
-
-With GitHub Pages, you can host project blogs, documentation, resumes, portfolios, or any other static content you'd like. Your GitHub repository can easily become its own website. In this course, we'll show you how to set up your own site or blog using GitHub Pages.
-
-- **Who is this for**: Beginners, students, project maintainers, small businesses.
-- **What you'll learn**: How to build a GitHub Pages site.
-- **What you'll build**: We'll build a simple GitHub Pages site with a blog. We'll use [Jekyll](https://jekyllrb.com), a static site generator.
-- **Prerequisites**: If you need to learn about branches, commits, and pull requests, take [Introduction to GitHub](https://github.com/skills/introduction-to-github) first.
-- **How long**: This course takes less than one hour to complete.
-
-In this course, you will:
-
-1. Enable GitHub Pages
-2. Configure your site
-3. Customize your home page
-4. Create a blog post
-5. Merge your pull request
-
-### How to start this course
-
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'skills',
-  template_name: 'github-pages',
-  owner: '@me',
-  name: 'skills-github-pages',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
-
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=github-pages&owner=%40me&name=skills-github-pages&description=My+clone+repository&visibility=public)
-
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
-
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
-
----
-
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+.rss {
+  width: 100%;
+  height: auto;
+  background: transparent;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  border-radius: 5px;
+  z-index: 999999!important;
+}
+.rss .shareButton.main .share, .rss .shareButton.main .close, .rss .shareButton.main .check {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  transition: all 150ms;
+}
+.rss .shareButton.main .share, .rss .shareButton.main.open .close, .rss .shareButton.main.sent .check {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+.rss .shareButton.main .close, .rss .shareButton.main.open .share, .rss .shareButton.main .check, .rss .shareButton.main.sent .share {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+.shareButton, .shareButton.open {
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  padding: 1rem;
+  overflow: hidden;
+  outline: none;
+  margin: 0.5rem;
+  width: 24px;
+  height: 24px;
+  box-sizing: content-box;
+  transition: all 200ms;
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAA81BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5eXnBwcHf39/Z2dna2trX19fa2trd3d3d3d3g4ODg4ODj4+Pj4+Pl5eXk5OTm5ubl5eXn5+fo6Ojp6enn5+fp6ens7Ozq6urr6+vr6+vt7e3s7Ozt7e3t7e3u7u7w8PDw8PDw8PDy8vLy8vLn5+f09PTn5+fy8vLn5+fp6enx8fHr6+vq6urs7Ozr6+vr6+vv7+/x8fHw8PDw8PDv7+/v7+/t7e3t7e3u7u7r6+vr6+vu7u7t7e3t7e3u7u7r6+vq6urq6urr6+vs7Ozr6+tWIAHaAAAAUXRSTlMAAQIDBAUGBwgJCgsVKVdYWVpaWltbZGRsbHFxdXV4foGBhIeJi4yQkJGUlpiZm5yenp+foKCnqaqqsbK0tba3w8TFxsbIydPU1dXb3N3d4uOSbqQHAAABdElEQVR42q2TbVOCQBSFg4UFAXtPJZVFQWRxUROj0jRR0UxL/v+vCQhdZ2zGL96vz86Ze885e3GuYfbzL2RZADgOAJY9fsCwgOOhEA/kOcAyR5QXREmORxIFPuOUclCU7/uLaBv2bmURcn+c0pwyXAYj3x9NVwMll3KqDHP5n8lT2yXEbXvBJp+DVJ8BvKh8v3eIg+0mdkhnvFFEHjB7aUEaTjotbJmGYVq41QneJCGWzzAvPiw9ght1HaFavYGJt7wW+R0GUHoO2o5VR1q1qqG65bTnPQmCHRbkxcjFpq49qqWyVjOxOwplIcNsjCOf2AaqqoWiWkVGk/jbGLOHuBnjUrGgVpBhEz9K8F48TMRrWllVy5q+E6er9afZapVstW68Gj3s7jM9rIaQnh72dZkcRm0ZBIe2zF4yW6ip49RUOzH1Y70zlUayCbwsktmaRkIDHazmSaDz1SsN9LAON70wisLuFa3DiTKdrOLpIh9/gzPNL7Z6NKvvS5JoAAAAAElFTkSuQmCC), auto;
+}
+.shareButton:hover, .shareButton.open:hover {
+  transform: scale(1) translateY(0px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+.shareButton:active, .shareButton.open:active {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAABAlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmZma5ubm4uLi8vLy6urrT09PU1NTS0tLS0tLT09PZ2dnY2Njb29vc3Nzd3d3g4ODf39/f39/h4eHa2trh4eHY2Nja2trg4ODa2tri4uLj4+PX19fZ2dnX19fk5OTl5eXl5eXn5+fo6Ojo6Ojm5ubp6enq6urs7Ozo6Ojt7e3u7u7v7+/p6eno6Ojp6enr6+vq6urq6urc3Nzb29vc3Nzm5ubm5ubk5OTl5eXk5OTm5ubd3d3e3t7d3d3e3t7f39/e3t7f39/e3t7e3t7d3d2Z9AvaAAAAVnRSTlMAAQIDBAUGBwgJCgsMDQ4PEBk+QUFDXV9gYWNscHB2eH2AgYaJiYqKiouLi4yMjY2Sk5WYmZqam52en6KisLGxsbKztre3v8DIyMnJ09PV1tfY4OXm50OBxC8AAAFqSURBVCjPjZPZSsNAFIY7WyZJXQpFLFpEn0IoxRbfW0VFUXwDwStRW6RKUUkyq2cmUxPXOJNcHL6c/6xBrb8O+mLaXygKhvXPZ4paCCFn2Za1dsEDBYQwXKAGrvugosAIJrikRhsdMFpAQmm/l1CVPdwppY3xGPkXA+PDzGQGJ4RcCMddbE8xpqw9mAmICLF59zSTCrzLOhCmNNmbaA3hvNE7EoBB21HQ5ePnXGorJWOIsKR9VoB2SQmJdjbnQonC+caMRp2bewFKvguEsl30UuhXr0yWCF+2l1I5y1EWjZ6EKHIoBGMS84h3ToSs6P5UirwAMQjD44itH9bphy9Q8I1Xa77f4q6oqxDX59zfhpxl7iiPIOfraci5rHc0z6p607RWL7SH8fFEufY4g2wcCLXoVdnndDgryj7H3eO86nOYERsYmWsaE3yu6jNy2o6vbaVUvd0+Agvj/8duNOxVw0427HPTv/DTeQcndQotgtF9KQAAAABJRU5ErkJggg==), auto;
+}
+.shareButton svg, .shareButton.open svg {
+  display: block;
+  fill: #ff0000;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  transition: all 150ms;
+  transform: scale(1);
+}
+.wt, .shareButton.open.wt {
+  transition-delay: 100ms;
+}
+.fb, .shareButton.open.fb {
+  transition-delay: 100ms;
+}
+.tw, .shareButton.open.tw {
+  transition-delay: 50ms;
+}
+.ig, .shareButton.open.ig {
+  transition-delay: 0ms;
+}
+.wt, .fb, .tw, .ig {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transform: scale(0);
+}
+.wt svg, .fb svg, .tw svg, .ig svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: scale(0);
+}
